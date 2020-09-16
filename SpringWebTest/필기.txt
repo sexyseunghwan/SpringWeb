@@ -67,6 +67,37 @@ Hello
 - src > main > webapp > WEB-INF > views > hello.jsp //뷰 역할
 
 
+스프링의 컨트롤러 조작법
+- 이전의 서블릿 조작법에 준하는 행동임.
+- servlet-context : <bean> 선언 or 스프링 설정
+
+- MVC (자바 & jsp)
+- 자바 : Java Resource > src/main/java > com.text.spring
+- JSP : /src/main/webapp/WEB_INF/views
+
+
+게시판 생성을 한다고 해보자(servlet/jsp)
+- 쓰기 읽기 목록보기 만한다고 쳐보자
+==> 서블릿과 jsp 간의 관계 : 1대1 방식 
+- List.java
+- Add.java
+- AddOk.java
+- View.java
+
+- list.jsp
+- add.jsp
+- view.jsp
+
+
+게시판생성(spring) -> 서블릿 개수가 달라지는 현상이 보여진다.
+==> 서블릿과 jsp 간의 관계 : 1대n 방식 
+- BoardController.java
+
+- list.jsp
+- add.jsp
+- view.jsp
+
+
 
 
 	

@@ -30,7 +30,8 @@ public class Ex01 implements Controller{
 		
 		request.setAttribute("count", count);
 		
-		//JSP 호출하기
+		//JSP 호출하기...등등
+		
 		//RequestDispatcher 사용 안함 -> ModelAndView 사용
 		ModelAndView mv = new ModelAndView();
 		

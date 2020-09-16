@@ -1,0 +1,84 @@
+메모장 을 만들어봅시다!
+- Spring MVC + Spring JDBC + Lombok
+- 중점 : 프로젝트 셋팅 방법 + Spring JDBC 사용방법.
+
+프로젝트 세팅
+1. 자바 + 스프링 버전 바꾸기.
+	pom.xml
+	
+	<properties>
+		<java-version>1.8</java-version>
+		<org.springframework-version>4.3.8.RELEASE</org.springframework-version>
+		<org.aspectj-version>1.6.10</org.aspectj-version>
+		<org.slf4j-version>1.6.6</org.slf4j-version>
+	</properties>
+	이런식으로 변경해준다.
+	
+	프로젝트 오른쪽 -> 프로퍼티 -> 프로젝트 페싯에 가서 자바버전 또 바꾼다.
+
+2. pom.xml
+	- 프로젝트의 필요한 jar 파일을 관리.
+	- ojdbc.jar
+	- spring-jdbc.jar
+	- lombok.jar
+	
+	maven search
+	https://search.maven.org/
+	https://mvnrepository.com/
+	
+	spring-jdbc이런식으로 검색
+	그래서 apache maven
+		
+	<dependency>
+  		<groupId>org.projectlombok</groupId>
+  		<artifactId>lombok</artifactId>
+  		<version>1.18.12</version>
+  		<scope>provided</scope>
+	</dependency>
+		요로케 생긴거 pom.xml에 넣어준다!
+		
+3. web.xml
+	- src > main > webapp > web.xml
+	- *.action 지정
+	- encoding 필터 추가.
+	
+4. root-context
+	- src > main > webapp > WEB-INF > spring > root-context.xml
+	- 설정 없음
+	
+5. servlet-context
+	- src > main > webapp > WEB-INF > spring > appServlet > servlet-context.xml
+	- 설정 없음.
+	
+----------------------------------- 스프링 셋팅
+
+6. Bootstrap
+	- http://bootstrapk.com/
+	- css,fonts,js 폴더 복사 -> src > main > webapp > resources 에 복사(*** 중요함!!)
+	
+	
+7. SQL
+	- SpringMemo > db.sql 파일 생성	
+	
+8. 파일생성
+	- com.test.spring > MemoController.java -> 메인 컨트롤러
+	- com.test.spring > IMemo.java -> 인터페이스(MemoDAO)
+	- com.test.spring > MemoDAO.java -> DAO
+	- com.test.spring > MemoDTO.java -> DTO
+	
+	
+	- views > index.jsp  //시작 페이지
+	- views > add.jsp  //글 쓰기 페이지
+	- views > edit.jsp  //글 수정 페이지
+	- views > del.jsp  //삭제 페이지
+	
+	
+	- webapp > resources > css > main.css // 공통 서식
+	
+	- views > template.jsp // 템플릿 페이지.
+	
+9. Lombok 설정
+	
+
+
+
