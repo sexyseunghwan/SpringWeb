@@ -78,6 +78,31 @@
 	- views > template.jsp // 템플릿 페이지.
 	
 9. Lombok 설정
+
+
+
+-----------******연습 해야 될것!!!*****----------
+1. Spring MVC
+	- 컨트롤러 사용법
+		- 데이터를 가져오는 방법(매개변수 사용)
+		- DAO 제어하는 방법(멤버변수 + 의존주입)
+		- JSP 호출하는 방법(ViewResolver)
+2. Spring JDBC
+	- DB 연결 방법
+	- 각종 쿼리 날리는 방법
+		- this.template 사용 방법
+			- update()
+			- query()
+			
+메모장을 한번은 servlet 으로 만들어보고
+한번은 Spring 으로 만들어 보는 연습을 하는것이 좋다.
+
+
+
+
+
+
+
 	
 
 

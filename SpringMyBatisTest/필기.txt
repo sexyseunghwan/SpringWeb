@@ -1,0 +1,46 @@
+
+
+2.MyBatis(iBatis)
+- 원래는 iBatis 라고 불렀음.
+- 응용 프로그램(Java) <-> 중간계층(jdbc,spring-jdbc,MyBatis,JPA) <-> 데이터베이스(oracle)
+
+
+
+3. 프로젝트 세팅
+	a. 버전 바꾸기
+	
+	b. pom.xml
+		- mybatis
+		- log4j 
+		- jdbc : WEB-INF > lib > ojdbc.jar 복사
+	
+	c. web.xml
+		- *.action
+		- POST > 인코딩 > UTF-8(데이터 보내고 받고 필터 처리해줘야 한다.)
+		
+	d. root-context.xml
+		- <bean> X 3개
+		- mybatis.xml 생성
+		- mapper > *.xml
+
+	
+4. 파일생성
+	a. MyBatisController.java
+	b. IMyBatisService.java + MyBatisService.java
+	c. MyBatisDAO.java
+	d. MyBatisDTO.java
+	e. views > result.jsp
+	f. SpringMayBatisTest > db.sql
+
+
+
+
+
+
+
+
+
+
+
+
+

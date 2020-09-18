@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-
+/* 전체적인 스타일을 여기서 잡아준다. */
 @font-face {
     font-family: 'paybooc-Bold';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');

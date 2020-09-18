@@ -1,0 +1,107 @@
+
+Spring Tiles
+- A free open-sourced templating framework
+- 템플릿 엔진 > 조각페이지 + include
+
+사이트 구현
+- 주제 : 회원 + 관리자 
+
+- 회원기능
+	- 회원 정보 페이지
+	- 회원 포인트 페이지
+	- 회원 게시판
+
+- 관리자 기능
+	- 관리자 로그 페이지
+	- 관리자 회원 관리 페이지
+	- 관리자 차트 페이지
+
+--프로젝트전에 항상 수정하고 가야되는 부분--
+1. 스프링 버젼
+	- pom.xml 에서 수정하기.
+	
+2. pom.xml
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-api</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-servlet</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-template</artifactId>
+			<version>2.2.2</version>
+		</dependency>
+		
+		를 추가함. tiles 관련 jar파일 5개 추가함.
+		
+		
+3. web.xml 열어서 확장자 수정 -> action으로
+
+4. 파일생성
+	- webapp > WEB-INF > tiles.xml
+	
+
+5. root-context.xml
+	안건들임
+
+
+6. servlet-context.xml
+
+	
+7. 리소스 파일 등록 
+	- webapp > resources > 부트스트랩 복사(css,fonts,js)
+
+
+8. 파일 생성
+	- MainController.java
+	
+	- views > member(폴더) > info.jsp
+	- views > member(폴더) > point.jsp
+	- views > member(폴더) > board.jsp
+	
+	- views > admin(폴더) > log.jsp
+	- views > admin(폴더) > member.jsp
+	- views > admin(폴더) > chart.jsp
+	
+	- views > inc(폴더) > mainmenu.jsp
+	- views > inc(폴더) > membermenu.jsp
+	- views > inc(폴더) > adminmenu.jsp
+	- views > inc(폴더) > asset.jsp
+	
+	- views > layout(폴더) > main.jsp
+	
+
+	
+Tiles 단점 -> 초기 셋팅이 진심 줜나게 어렵다.
+
+
+
+
+
+
+
+
+
+
+
+
+

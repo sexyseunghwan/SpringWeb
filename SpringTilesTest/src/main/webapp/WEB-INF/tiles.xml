@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" 
+"http://tiles.apache.org/dtds/tiles-config_2._1.dtd">
+
+<tiles-definitions>
+	<!-- 타일즈 레이아웃 정의 -->
+	
+<!-- 	<definition name="info" template="/WEB-INF/views/layout/main.jsp">애는 레이아웃
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="mainmenu" value="/WEB-INF/views/inc/mainmenu.jsp"></put-attribute>
+		<put-attribute name="membermenu" value="/WEB-INF/views/inc/membermenu.jsp"></put-attribute>
+		<put-attribute name="info" value="/WEB-INF/views/member/info.jsp"></put-attribute>애는 재사용이 불가능한 페이지가 된다. 다른거 클릭하면 다른 내용이 떠야 되니까!
+	</definition>
+	
+	<definition name="point" template="/WEB-INF/views/layout/main.jsp">애는 레이아웃
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="mainmenu" value="/WEB-INF/views/inc/mainmenu.jsp"></put-attribute>
+		<put-attribute name="membermenu" value="/WEB-INF/views/inc/membermenu.jsp"></put-attribute>
+		<put-attribute name="info" value="/WEB-INF/views/member/point.jsp"></put-attribute>애는 재사용이 불가능한 페이지가 된다. 다른거 클릭하면 다른 내용이 떠야 되니까!
+	</definition>
+	
+	<definition name="board" template="/WEB-INF/views/layout/main.jsp">애는 레이아웃
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="mainmenu" value="/WEB-INF/views/inc/mainmenu.jsp"></put-attribute>
+		<put-attribute name="membermenu" value="/WEB-INF/views/inc/membermenu.jsp"></put-attribute>
+		<put-attribute name="info" value="/WEB-INF/views/member/board.jsp"></put-attribute>애는 재사용이 불가능한 페이지가 된다. 다른거 클릭하면 다른 내용이 떠야 되니까!
+	</definition> -->
+	
+	<!-- 원래는 위처럼 하는게 맞는데 위처럼 하게 되면 줜나 많아지게 된다. 재사용이 안되는채로 반복이 되므로... 위와 같은 방법을 안쓴다. -->
+	
+	
+	<!-- 앞에서는 info 로 찾아도  * 면 모두 반응을 하게 된다-->
+	<!-- 
+		단어가 두개가 넘어오게 된다
+		member.board -> *.*
+		admin.log -> *.*
+	 -->
+	<definition name="*.*" template="/WEB-INF/views/layout/main.jsp"><!--애는 레이아웃  -->
+		<put-attribute name="asset" value="/WEB-INF/views/inc/asset.jsp"></put-attribute>
+		<put-attribute name="mainmenu" value="/WEB-INF/views/inc/mainmenu.jsp"></put-attribute>
+		<put-attribute name="submenu" value="/WEB-INF/views/inc/{1}menu.jsp"></put-attribute>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"></put-attribute><!-- 애는 재사용이 불가능한 페이지가 된다. 다른거 클릭하면 다른 내용이 떠야 되니까! -->
+		<!-- name = * 를 받은것을 {1}로 받아서 넣어준다. point 를 받으면 {1} 이 point 로 바뀌고  board를 넣으면 board로 바뀌게된다, -->
+	</definition>
+	
+	
+
+</tiles-definitions>
+
+
+
+

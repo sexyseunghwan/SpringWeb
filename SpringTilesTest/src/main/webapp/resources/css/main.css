@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+/*main.css*/
+@font-face {
+   font-family: 'InfinitySans-RegularA1';
+   src:
+      url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/InfinitySans-RegularA1.woff')
+      format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+body, div, span, p, input, textarea, ul, ol, li, a, table, th, td, h1,
+   h2, h3, h4, h5, h6, pre, code {
+   font-family: 'InfinitySans-RegularA1';
+}
+
+main {
+	width: 600px;
+	margin: 0px auto;
+	border: 10px solid #999;
+}
+
+main::after {
+	content: ' ';
+	display: block;
+	clear: both;
+}
+
+
+#mainmenu {
+	border: 10px solid tomato;
+	height: 50px;
+	
+}
+
+#submenu {
+	border: 10px solid royalblue;
+	width: 150px;
+	height: 300px;
+	float: left;
+}
+
+#content {
+	
+	border: 10px solid gold;
+	width: 430px;
+	height: 300px;
+	float: left;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,3 +14,7 @@ create sequence seqMemo;
 
 
 select * from tblMemo;
+
+--아주 좋아...!
+
+

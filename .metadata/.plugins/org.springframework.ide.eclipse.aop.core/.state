@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="SpringMyBatisTest"/>
+<aop-project name="SpringTilesTest"/>
 <aop-project name="SpringMemo"/>
 <aop-project name="SpringWebTest"/>
 </aop-reference-model>

@@ -16,6 +16,9 @@ import lombok.Data;
 public class MemoDTO {
 	//게터 세터도 없는데? -> lombok 으로 정해놓은 어노테이션이  우리대신에 추가적인 멤버를 다 만들어준다.
 	
+	//권장 사항
+	//- DB 테이블의 컬럼명 == DTO 멤버변수명 == HTML 태그의 name 이 세개는 통일 시켜주는게 좋음.
+	
 	private String seq;
 	private String name;
 	private String memo;
