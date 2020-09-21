@@ -35,6 +35,19 @@
 		insert into tblMyBatis (seq,name,age,etc) values (seqMyBatis.nextVal,#{name},#{age},#{etc})
 	</insert>
 	
+	<!-- test.m5 -->
+	<select id="m5" resultType="String">
+		select name from tblMyBatis where age = (select max(age) from tblMyBatis) and rownum = 1
+	</select>
 	
+	<!-- test.m6 -->
+	<select id="m6" parameterType="String" resultType="com.test.spring.MyBatisDTO">
+		select * from tblMyBatis where seq = #{seq}
+	</select>
+	
+	<!-- test.m7 -->
+	<select id="m7" resultType="String"> <!--  resultType : 반환값의 단일 레코드의 자료형 -->
+		select name from tblMyBatis
+	</select>
 	
 </mapper>

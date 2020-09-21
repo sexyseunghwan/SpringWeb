@@ -147,8 +147,16 @@
 			<artifactId>tiles-template</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-	
 		
+		<!-- Lombok 을 가져올것 -->
+		<dependency>
+  			<groupId>org.projectlombok</groupId>
+  			<artifactId>lombok</artifactId>
+  			<version>1.18.12</version>
+  			<scope>provided</scope>
+		</dependency>
+	
+			
 		 
 	</dependencies>
     <build>

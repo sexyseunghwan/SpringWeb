@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- src/main/java > com.test.spring.mapper > test.xml -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="board">
+	<!-- 이름 계속  resultType="com.test.spring.CategoryDTO" 이런식으로 만들기 귀찮으므로 mybatis.xml 에서 고쳐준다.  -->
+	<select id="clist" resultType="cdto">
+		select * from tblCategory order by seq asc
+	</select>
+	
+	<insert id="add" parameterType="bdto"><!-- 아까 별칭 만들어놨으니 이렇식으로 써도 된다 -->
+		insert into tblCode (seq,subject,content,filename,regdate,cseq) values (seqCode.nextVal,#{subject},#{content},#{filename},default,#{cseq})
+	</insert>
+	
+	<select id="list" resultType="bdto">
+		select seq, subject, regdate, cseq, (select name from tblCategory where seq = c.cseq) as cname,
+		 (select type from tblCategory where seq = c.cseq) as ctype
+			from tblCode c
+				order by seq desc
+	</select>
+	
+	<select id="get" parameterType="String" resultType="bdto">
+		select seq, subject, regdate, cseq, content, filename, 
+		(select name from tblCategory where seq = c.cseq) as cname,
+		 (select type from tblCategory where seq = c.cseq) as ctype
+			from tblCode c
+				where seq = #{seq}
+	</select>
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,6 +1,7 @@
 package com.test.spring;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,11 +51,46 @@ public class MyBatisDAO {
 			
 		return template.insert("test.m3",map);
 	}
-
+	
+	
 	public int m4(MyBatisDTO dto) {
 		
 		
 		return template.insert("test.m4",dto);
+	}
+	
+	
+	
+	public String m5() {
+		
+		//결과 테이블의 레코드 개수에 따라
+		// - template.selectOne() : 1개
+		// - template.selectList() : 1개 이상
+		
+		return template.selectOne("test.m5");
+	}
+
+	public MyBatisDTO m6(String seq) {
+		
+		//결과 테이블의 레코드 개수에 따라
+		// - template.selectOne() : 1개
+		// - template.selectList() : 1개 이상
+		
+		return template.selectOne("test.m6", seq);
+	}
+
+	public List<String> m7() {
+		
+		//결과 테이블의 레코드 개수에 따라
+		// - template.selectOne() : 1개
+		// - template.selectList() : 1개 이상
+		
+		return template.selectList("test.m7");
+	}
+
+	public List<MyBatisDTO> m8() {
+		
+		return null;
 	}
 
 	

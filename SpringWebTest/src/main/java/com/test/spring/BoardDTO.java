@@ -9,6 +9,8 @@ public class BoardDTO {
 	private String name;
 
 	
+	
+	
 	public String getSubject() {
 		return subject;
 	}

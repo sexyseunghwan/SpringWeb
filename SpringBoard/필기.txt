@@ -1,0 +1,85 @@
+스프링 게시판
+- Spring MVC + MyBatis + Tiles + Spring File Upload + log4j
+- Spring MVC + MyBatis
+
+
+1. 프로젝트 생성
+	- new > Other > Spring > Spring Legacy Project > Spring MVC Project > "SpringBoard" > "com.test.spring"
+	
+2. 스프링 버전
+	- JAVA : 1.8
+	- Spring : 4.3.8
+	
+3. 라이브러리
+	- pom.xml
+	- JDBC(WEB-INF/lib)
+	- MyBatis
+	- Tiles
+	- File Upload(2개)
+	- log4j
+	- lombok
+	
+4. web.xml
+	- 요청 확장자 지정(*.action)
+	- POST 인코딩 처리 필터 추가
+	
+5. root-context.xml
+	- MyBatis(<bean> 3개)
+	- log4j(<bean> 1개) log4j.xml 덮어쓰기
+	- 파일업로드
+	
+6. servlet-context.xml
+	- Tiles 설정
+	- 기존 ViewResolver 주석 처리
+	- <bean> 2개 추가
+	
+7. 파일 생성
+	a. 부트 스트랩 
+		- webapp > resources > css, fonts, js 폴더 복사
+	
+	b. BoardController.java
+		- 컨트롤러
+		
+	c. IBoardDAO.java + BoardDAO.java
+		- DAO
+	
+	d. BoardDTO.java
+		- DTO
+	e. WEB-INF > views > layout > board.jsp 	// 타일즈 레이아웃 파일(바닥 + 전체 디자인 관리)
+	
+	f. WEB-INF > views > inc //조각 페이지
+		> asset.jsp
+		> header.jsp
+		> footer.jsp
+		
+	g. WEB-INF > views > content // 컨텐츠 페이지(타일즈 -> 주 업무 페이지도 조각 페이지로 관리)
+		> list.jps
+		> add. jsp
+		> views.jsp
+		> edit.jsp
+		> del.jsp
+		> template.jsp
+	
+	h. SpringBoard > db.sql
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

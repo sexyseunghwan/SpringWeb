@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //@RequestMapping(value="/list.action")
 public class BoardController {
 	
+
+	
 	//글 목록 보기
 	@RequestMapping(value="/list.action")
 	public String list() {
@@ -15,6 +17,7 @@ public class BoardController {
 		return "list";
 		
 	}
+	
 	
 	//글쓰기
 	@RequestMapping(value="/add.action")

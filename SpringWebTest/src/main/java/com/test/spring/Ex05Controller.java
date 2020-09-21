@@ -20,6 +20,7 @@ public class Ex05Controller {
 	}
 	
 	//Spring mvc 에서 전송된 데이터를 수신하는 방법에대해 이야기 해보자.
+	//해당ok메서드는 jsp 페이지를 만들지 않을것이다.	
 	@RequestMapping(value="/board/addok.action")
 	public void addok(
 						HttpServletRequest request,
@@ -29,8 +30,10 @@ public class Ex05Controller {
 						//String subject,//request.getParameter("subject"); 의 역할을 수행한다.
 						//String content,//request.getParameter("content"); 의 역할을 수행한다.
 						//String name//request.getParameter("name"); 의 역할을 수행한다.
-					
+						
 			) {//매개변수의 순서는 여기서는 중요하지 않음 
+		
+		// (????)대체 여기서 seq 는 뭐하는 놈이지?..		
 		
 		//현재상황 -> 상상해라
 		//1. 데이터 가져오기

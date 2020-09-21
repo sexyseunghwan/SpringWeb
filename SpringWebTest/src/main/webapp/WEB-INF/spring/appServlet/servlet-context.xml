@@ -45,12 +45,13 @@
 	<!-- 
 		1. 브라우저에 요청
 		2. DispatcherServlet 이 요청을 받아 ~.action 이라는 주소를 확인한다
-		3. DispatcherServlet 이 확인된 ~.action 이라는 주소를 가지고 setclet-context 내에 들어있는 모든 <bean> 태그의 name 값과 비교해서 동일한 
-		<bean> 태그를 찾는다
-		4. 찾은 <bean> 태그를 getBean() 메소드를 사용해서 해당 클래스의 객체를 만든다
-		5. 만들엊딘 객체의 handleRequest() 메서드를 호출하여 작업을 진행한다.
+		3. DispatcherServlet 이 확인된 ~.action 이라는 주소를 가지고 servlet-context 내에 들어있는 모든 <bean> 태그의 name 값과 비교해서 동일한 
+		<bean> 태그를 찾는다.
+		4. 찾은 <bean> 태그를 getBean() 메소드를 사용해서 해당 클래스의 객체를 만든다.
+		5. 만들어진 객체의 handleRequest() 메서드를 호출하여 작업을 진행한다...
 		
-		의존주입을 해줘야한다.
+		의존주입을 해줘야한다.(***)
+		
 	 -->
 	 
 	 <!-- bean 태그를 하나 더 만들어본다. -->

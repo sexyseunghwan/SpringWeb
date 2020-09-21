@@ -69,7 +69,7 @@ Hello
 
 스프링의 컨트롤러 조작법
 - 이전의 서블릿 조작법에 준하는 행동임.
-- servlet-context : <bean> 선언 or 스프링 설정
+- servlet-context : <bean> 선언 or 스프링 설정~~
 
 - MVC (자바 & jsp)
 - 자바 : Java Resource > src/main/java > com.text.spring
