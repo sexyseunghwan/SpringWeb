@@ -16,18 +16,17 @@ public class MemoController {
 	
 	//서블릿때는 다 다른 페이지에 있어서 힘들었지만 이거는 한 페이지에 있으므로 dao를 멤버로 만들어준다(전역변수 역할)
 	@Autowired//아래 변수에 객체를 자동으로 생생해서 넣어라 라는 뜻이된다ㅣ(***) 의존 주입 즉 애는 의존주입 어노테이션이라고 보면된다. -> 생성자나 setter를 만들지 않아도 된다.
-	private IMemo dao;//의존객체!! -> 의존주입을 시켜야 한다! -> 최종방법으로 어노테이션 사용
+	private IMemo dao;//의존객체!! -> "의존주입"을 시켜야 한다! -> 최종방법으로 어노테이션 사용...의존주입을 시켜야되는데?!
 	//원래대로라면  private IMemo dao = new MemoDAO() 이런식으로 객체를 만들어야 되는데
 	//실제로 MemoDAO 클래스로 가서 클래스 이름 위에 @Repository 를 붙여주면 된다(***)
+	
 	
 	//템플릿 작업
 	@RequestMapping(value="/template.action",method= {RequestMethod.GET})
 	public String template(HttpServletRequest request, HttpServletResponse response) {
 	
-		
 		return "template";
 	}//주소하나당 하나씩 만들어지게 될것이다!.
-	
 	
 	//메모쓰기
 	@RequestMapping(value = "/add.action", method = { RequestMethod.GET })

@@ -1,6 +1,7 @@
 package com.test.spring;
 
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -80,6 +81,56 @@ public class MyBatisController {
 		
 		return "result";
 	}
+	
+	@RequestMapping(value = "/m5.action", method = (RequestMethod.GET))
+	public String m5(HttpServletRequest request, HttpServletResponse response) {
+
+		//반환값 o
+		//1. 단일값 반환 : 단일 레코드 + 단일 컬럼 : int or double or String
+		//2. 다중값 반환 : 단일 레코드 + 다중 컬럼 : DTO
+		//3. 다중값 반환 : 다중 레코드 + 단일 컬럼 : ArrayList<String>
+		//4. 다중값 반환 : 다중 레코드 + 다중 컬럼 : ArrayList<DTO>
+		
+		String name=service.m5();
+		
+		request.setAttribute("name", name);
+
+		return "result";
+	}//m5
+	
+	@RequestMapping(value = "/m6.action", method = (RequestMethod.GET))
+	public String m6(HttpServletRequest request, HttpServletResponse response,String seq) {
+
+		//번호 -> 정보 반환
+		//m6.action?seq=6
+
+		MyBatisDTO dto=service.m6(seq);
+		
+		request.setAttribute("dto", dto);
+		return "result";
+	}//m6
+	
+	@RequestMapping(value = "/m7.action", method = (RequestMethod.GET))
+	public String m7(HttpServletRequest request, HttpServletResponse response) {
+
+		//이름 목록 가져오기
+		List<String> names=service.m7();
+
+		request.setAttribute("names", names);
+		return "result";
+	}//m7
+	
+	@RequestMapping(value = "/m8.action", method = (RequestMethod.GET))
+	public String m8(HttpServletRequest request, HttpServletResponse response) {
+
+		//다중 레코드 + 다중 컬럼
+		
+		List<MyBatisDTO> list=service.m8();
+		
+		request.setAttribute("list", list);
+
+		return "result";
+	}//m8
 }
 
 

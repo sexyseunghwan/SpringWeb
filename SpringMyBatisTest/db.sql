@@ -12,3 +12,10 @@ create sequence seqMyBatis;
 
 select * from tblMyBatis;
 
+
+select * from tblCode;
+
+select * from tblcategory;
+
+
+

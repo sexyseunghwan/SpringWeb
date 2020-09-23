@@ -32,13 +32,13 @@ public class BoardDAO implements IBoardDAO{
 	@Override
 	public int edit(BoardDTO dto) {
 		// TODO Auto-generated method stub
-		return 0;
+		return template.update("board.edit",dto);//매개변수 두번째가 넘어가는 것이다. board.xml로
 	}
 
 	@Override
 	public int delete(String seq) {
 		// TODO Auto-generated method stub
-		return 0;
+		return template.delete("board.delete",seq);
 	}
 
 	@Override

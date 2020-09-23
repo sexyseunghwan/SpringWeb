@@ -1,0 +1,38 @@
+
+web 에서도 AOP 를 지정해보자.
+- 주업무 보조업무 나눠서 진행했던거!
+- 조직화 시키다 보니 재상용성이 높아져서 유지보수성이 높다.
+
+
+****단계
+
+1. 프로젝트 생성
+
+2. 자바, 스프링 버전 바꾸기
+
+3. web.xml
+	- 확장자(*.action 작업)
+	- 인코딩 필터(UTF-8 로 바꾸는 작업.)
+	
+4. pom.xml
+	- AOP 의 bean 세개
+
+5. rootContext
+ X
+ 
+6. Servletcontext.xml
+	- AOP 
+
+7. 파일생성
+	- AOPController.java //컨트롤러
+	- IService.java + Service.java // 주업무객체
+	- DAO.java + DTO.java //모델 객체
+	- Cross.java // 보조업무 객체
+	- result.jsp //뷰
+	- Auth.java // 보조업무 객체
+
+
+
+
+
+

@@ -29,7 +29,19 @@
 				where seq = #{seq}
 	</select>
 	
-
+	<update id="edit" parameterType="bdto">
+		update tblCode set 
+			subject = #{subject},
+			content = #{content},
+			cseq = #{cseq},
+			filename = #{filename}
+				where seq = #{seq}
+	</update>
+	
+	<delete id="delete" parameterType="String">
+		delete from tblCode where seq = #{seq}
+	</delete>
+	
 </mapper>
 
 

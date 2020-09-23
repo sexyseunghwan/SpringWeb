@@ -64,9 +64,5 @@
 		<!-- setter을 사용할때 사용  set을 지우고 케멀표기법 대문자를 소문자로 변환-->
 	</beans:bean>
 	
-	
-	
-	
-	
-	
+
 </beans:beans>

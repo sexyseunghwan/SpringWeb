@@ -227,4 +227,113 @@ public class BoardController {
 		
 		return "view";
 	}
+	
+	@RequestMapping(value = "/edit.action", method = { RequestMethod.GET })
+	public String edit(HttpServletRequest request, HttpServletResponse response,String seq) {
+
+		//수정하기
+		//1. 데이터 가져오기
+		//2. DB 작업 -> select
+		//3. DTO -> JSP 전달
+		
+		
+
+		List<CategoryDTO> clist = dao.clist();
+		BoardDTO dto = dao.get(seq);
+		
+		request.setAttribute("dto",dto);
+		request.setAttribute("clist", clist);
+		
+
+		return "edit";
+	}
+	
+	
+	@RequestMapping(value = "/editok.action", method = { RequestMethod.POST })
+	public void editok(HttpServletRequest request, HttpServletResponse response,BoardDTO dto) {//1.
+
+		
+		//글 수정하기.
+		//1. 데이터 가져오기
+		//2. 첨부파일 처리하기
+		//3. DB 작업 -> update
+		//4. 결과
+		
+		
+		//2. 첨부파일 처리
+		//a. 파일 교체 하는 경우
+		//b. 그대로 파일 사용하는 경우
+		
+		//첨부파일 참조 조작.
+		MultipartHttpServletRequest multi = (MultipartHttpServletRequest)request;
+		//첨부파일 처리
+		MultipartFile attach = multi.getFile("attach");//첨부파일 객체 참조 -> 넘어온 파일이 있는지 없는지 확인해야 한다.
+		
+		//System.out.println("empty : " + attach.isEmpty());//파일이 들어가있으면 false 없으면 true
+		
+		if (!attach.isEmpty()) {
+			//첨부파일 수정함
+			
+			try {
+				
+				//예전파일은 삭제 해야 한다.
+				File oldfile = new File(request.getRealPath("files") + "\\" + dto.getFilename());
+				oldfile.delete();
+				
+				
+				
+				//교체할 파일이 업로드
+				String filename = attach.getOriginalFilename();//첨부파일 이름.
+				
+				//중복되지 않는 파일명 만들어서 반환시켜줄것이다. -> 뒤에 숫자붙일거임. 우리가 직접 해줄것이다.(***)
+				filename = getFileName(request.getRealPath("files"),filename);//(경로,첨부파일 이름)
+				
+				
+				
+				File file = new File(request.getRealPath("files") + "\\" + filename);//attach.getOriginalFilename() 이 원래 filename 에 있었음
+				System.out.println(file.getAbsolutePath());//아래와 같은 경로가 나오게 된다.
+				//C:\Users\신승환\Desktop\java\springweb\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\SpringBoard\files\난왜안되는거냐.txt
+				//즉 위에서 말하는 위치와 우리가 새로 만든 files 폴더랑 같은 위치라고 보면 된다.
+				
+				attach.transferTo(file);//임시폴더 -> files 폴더로 파일을 이동한다. -> 파일업로드 완료
+				
+				dto.setFilename(filename);//방금 업로드한 파일명을 dto에도 추가를 해야한다.
+				
+			} catch(Exception e) {
+				System.out.println(e);
+			}
+			
+			
+		}
+		
+		
+		
+		int result = dao.edit(dto);//옛날 파일이 들어있거나 새로운 파일이 들어있거나 둘중 하나임.
+		
+
+		complete(result,response,"view.action?seq=" + dto.getSeq());
+	}
+	
+	//바로 삭제처리 해줄것이다.
+	@RequestMapping(value = "/delete.action", method = { RequestMethod.GET })
+	public void delete(HttpServletRequest request, HttpServletResponse response,String seq) {//1.
+
+		//1. 데이터 가져오기(seq)
+		//1.5 첨부파일 삭제하기
+		//2. DB 작업 -> delete
+		//3. 결과
+		
+		
+		BoardDTO dto = dao.get(seq);
+		
+		File file = new File(request.getRealPath("files") + "\\" + dto.getFilename());
+		
+		file.delete();//파일 삭제
+		
+		int result = dao.delete(seq);//2.위에서 파일 삭제한 이후 데이터 베이스로 넘어가서 데이터를 삭제해준다.
+		
+		complete(result,response,"list.action");
+		
+	}
+	
 }

@@ -1,7 +1,0 @@
-package com.test.spring;
-
-import org.springframework.web.servlet.mvc.Controller;
-
-public class Hello implements Controller{
-
-}

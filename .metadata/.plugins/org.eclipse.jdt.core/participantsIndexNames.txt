@@ -5,6 +5,8 @@ C:\Users\重渋発\Desktop\java\springweb\.metadata\.plugins\org.eclipse.jst.jsp.co
 \SpringWebTest\src\main\java
 C:\Users\重渋発\Desktop\java\springweb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3303810575.index
 \SpringMemo\src\main\java
+C:\Users\重渋発\Desktop\java\springweb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2618294528.index
+\SpringAOPTest\src\main\java
 C:\Users\重渋発\Desktop\java\springweb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\89629824.index
 \SpringWebTest\src\main\java
 C:\Users\重渋発\Desktop\java\springweb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4097717578.index
@@ -27,3 +29,5 @@ C:\Users\重渋発\Desktop\java\springweb\.metadata\.plugins\org.eclipse.jst.jsp.co
 \SpringBoard\src\main\java
 C:\Users\重渋発\Desktop\java\springweb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2576966671.index
 \SpringBoard\src\main\java
+C:\Users\重渋発\Desktop\java\springweb\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\335902666.index
+\SpringTransaction\src\main\java

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- src/main/java > com.test.spring.mapper > test.xml -->
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="tran">
+	<!-- 보통 namespace 는 파일명을 붙인다. -->
+	<insert id="add" parameterType="com.test.spring.DTO">
+		insert into tblBoard (seq,subject,tseq) values (seqBoard.nextVal,#{subject},#{tseq})
+	</insert>
+	
+	<update id="point" parameterType="com.test.spring.DTO">
+		update tblTran set point = point + 100 where seq = #{tseq}
+	</update>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

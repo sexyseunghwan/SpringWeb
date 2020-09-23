@@ -1,6 +1,7 @@
 package com.test.spring;
 
 import java.util.HashMap;
+import java.util.List;
 
 public interface IMyBatisService {
 
@@ -12,4 +13,11 @@ public interface IMyBatisService {
 
 	int m4(MyBatisDTO dto);
 
+	String m5();
+
+	MyBatisDTO m6(String seq);
+
+	List<String> m7();
+
+	List<MyBatisDTO> m8();
 }

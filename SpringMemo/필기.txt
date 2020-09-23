@@ -36,7 +36,7 @@
   		<scope>provided</scope>
 	</dependency>
 		요로케 생긴거 pom.xml에 넣어준다!
-		
+	
 3. web.xml
 	- src > main > webapp > web.xml
 	- *.action 지정

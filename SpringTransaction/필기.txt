@@ -1,0 +1,51 @@
+1. 프로젝트 경로생성
+
+2. JDBC 트랜잭션
+-Connection conn;
+-conn.autoCommit(false) 이런식으로 트랜잭션을 통제.
+**커밋하고 싶은 시점에**
+-conn.commit();
+-conn.rollback();
+
+3. db.sql
+
+4. 버전변경
+
+5. 라이브러리
+	- JDBC
+	- MyBatis
+	- AOP(스프링 트랜잭션 기능이 AOP 기반으로 동작한다.)
+	- Transaction 과 관련된 jar는 추가로 존재하지 않는다.
+
+6.web.xml
+	- 확장자 수정
+	- 인코딩 필터 추가
+
+7. root-context
+	- MyBatis 설정
+	- Transaction 설정
+
+8. Servlet-context.xml
+	- transaction을 사용하기 위해  aop 설정.
+	
+9. 파일 생성
+	- TransactionController.java
+	- IService.java + Service.java
+	- DAO.java
+	- DTO.java
+	
+	- add.jsp
+	- addok.jsp
+	
+	
+- 에밋기능 사용.. 
+ http://download.emmet.io/eclipse/updates/ 
+
+
+
+
+
+
+
+
+
